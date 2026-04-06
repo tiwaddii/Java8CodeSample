@@ -15,7 +15,8 @@ public class MaxAgeOfEmp {
 				new Employee(6, "Eve", "IT", 25, "F", 25000));
 		
 		   int maxAge = empList.stream()
-				        .mapToInt(emp -> emp.getAge()).max().getAsInt();
+				        .mapToInt(emp -> emp.getAge())
+				        .max().getAsInt();
 		   System.out.println("the max age of employee: " + maxAge);
 		   
 		   

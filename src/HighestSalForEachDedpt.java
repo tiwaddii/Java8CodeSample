@@ -17,7 +17,7 @@ public class HighestSalForEachDedpt {
 		
 		Map<String, Optional<Employee>> highestSalForEachDedpt = empList.stream()
 				                                                 .collect(Collectors.groupingBy(Employee::getDepName, 
-				                                                  Collectors.minBy(Comparator.comparing(Employee::getSalary))));
+				                                                  Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
 		System.out.println(highestSalForEachDedpt);
 
 	}

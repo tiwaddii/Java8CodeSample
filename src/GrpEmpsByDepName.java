@@ -17,15 +17,14 @@ public class GrpEmpsByDepName {
 		
 		Map<String, List<Employee>> deptMap = empList.stream()
         		                              .collect(Collectors.groupingBy(Employee::getDepName));
-        Long empCount = empList.stream().count();
+		deptMap.forEach((dept, employee) -> System.out.println(dept + ": " + employee));
         
-        deptMap.forEach((dept, employee) -> {
-            System.out.println(dept + ": " + employee);});
+        Long empCount = empList.stream().count();
         System.out.println("Total employee count is: "+ empCount);
         
         List<String> deptNamesList = empList.stream()
         		                     .map(emp -> emp.getDepName()).collect(Collectors.toList());
-        System.out.println("Total employee count is: "+ deptNamesList);
+        System.out.println("The department name List: "+ deptNamesList);
         
 	}
 	
